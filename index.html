@@ -4,18 +4,17 @@
 <title>믿음설계 — 노홍균 보험설계사</title>
 <style>
   :root {
-    --bg: #eef1f6;
-    --surface: #e2e8f0;
-    --ink: #151b26;
-    --ink-soft: #4a5568;
-    --ink-faint: #7c8798;
-    --accent: #35618f;
-    --accent-bright: #4f7fb8;
-    --accent-soft: #dbe6f2;
-    --line: rgba(21, 27, 38, 0.14);
-    --hero-bg: #16233a;
-    --hero-ink: #eef1f6;
-    --hero-ink-soft: #aab8cc;
+    --bg: #f7f5ef;
+    --surface: #efeadf;
+    --ink: #14120f;
+    --ink-soft: #55524a;
+    --ink-faint: #918d80;
+    --accent: #9c7a2e;
+    --accent-bright: #c9a955;
+    --line: rgba(20, 18, 15, 0.14);
+    --hero-bg: #0d0d0c;
+    --hero-ink: #f7f5ef;
+    --hero-ink-soft: #c2bcac;
     --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, ui-serif, serif;
     --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
@@ -23,35 +22,35 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #10151f;
-      --surface: #171e2b;
-      --ink: #eef1f6;
-      --ink-soft: #a4aebd;
-      --ink-faint: #666f80;
-      --accent: #7fa8d4;
-      --accent-bright: #9cc0e8;
-      --line: rgba(238, 241, 246, 0.14);
+      --bg: #131210;
+      --surface: #1c1a16;
+      --ink: #f7f5ef;
+      --ink-soft: #beb7a5;
+      --ink-faint: #746f61;
+      --accent: #c9a955;
+      --accent-bright: #ddc077;
+      --line: rgba(247, 245, 239, 0.14);
     }
   }
   :root[data-theme="dark"] {
-    --bg: #10151f;
-    --surface: #171e2b;
-    --ink: #eef1f6;
-    --ink-soft: #a4aebd;
-    --ink-faint: #666f80;
-    --accent: #7fa8d4;
-    --accent-bright: #9cc0e8;
-    --line: rgba(238, 241, 246, 0.14);
+    --bg: #131210;
+    --surface: #1c1a16;
+    --ink: #f7f5ef;
+    --ink-soft: #beb7a5;
+    --ink-faint: #746f61;
+    --accent: #c9a955;
+    --accent-bright: #ddc077;
+    --line: rgba(247, 245, 239, 0.14);
   }
   :root[data-theme="light"] {
-    --bg: #eef1f6;
-    --surface: #e2e8f0;
-    --ink: #151b26;
-    --ink-soft: #4a5568;
-    --ink-faint: #7c8798;
-    --accent: #35618f;
-    --accent-bright: #4f7fb8;
-    --line: rgba(21, 27, 38, 0.14);
+    --bg: #f7f5ef;
+    --surface: #efeadf;
+    --ink: #14120f;
+    --ink-soft: #55524a;
+    --ink-faint: #918d80;
+    --accent: #9c7a2e;
+    --accent-bright: #c9a955;
+    --line: rgba(20, 18, 15, 0.14);
   }
 
   * { box-sizing: border-box; }
@@ -92,15 +91,17 @@
 
   .wordmark {
     font-family: var(--serif);
-    font-size: 1.1rem;
-    letter-spacing: 0.01em;
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
   }
   .wordmark .dot { color: var(--accent); }
 
   .nav-links {
     display: flex;
-    gap: 1.5rem;
-    font-size: 0.86rem;
+    gap: 1.6rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     color: var(--ink-soft);
   }
   .nav-links a { text-decoration: none; }
@@ -142,11 +143,11 @@
   }
 
   .hero h1 {
-    font-family: var(--sans);
-    font-weight: 800;
-    font-size: clamp(2.2rem, 6.5vw, 3.4rem);
-    line-height: 1.2;
-    letter-spacing: -0.01em;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2.2rem, 6.5vw, 3.3rem);
+    line-height: 1.25;
+    letter-spacing: 0;
     margin: 0 0 1.3rem;
     text-wrap: balance;
   }
@@ -172,7 +173,7 @@
     text-decoration: none;
     display: inline-block;
   }
-  .btn-solid { background: var(--accent-bright); color: #0d1420; }
+  .btn-solid { background: var(--accent-bright); color: #14120f; }
   .btn-solid:hover, .btn-solid:focus-visible { background: var(--hero-ink); }
   .btn-outline { border: 1px solid var(--hero-ink-soft); color: var(--hero-ink); }
   .btn-outline:hover, .btn-outline:focus-visible { border-color: var(--hero-ink); background: rgba(238,241,246,0.08); }
