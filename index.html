@@ -328,24 +328,17 @@
     box-shadow: 0 10px 24px rgba(22,36,58,0.08);
   }
 
-  .process-step .step-no {
-    position: absolute;
-    top: 0.9rem;
-    left: 1rem;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 0.7rem;
-    color: var(--ink-faint);
-  }
-
   .process-step .icon-badge {
-    width: 72px;
-    height: 72px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.1rem;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--accent-deep);
     margin: 0 0 1.1rem;
   }
   .process-step:nth-child(1) .icon-badge { background: #dcebf9; }
@@ -423,8 +416,6 @@
     color: var(--ink-soft);
     white-space: nowrap;
   }
-  .trust-item .t-icon { font-size: 1.1rem; }
-
   /* ---- Story ---- */
 
   .story-body {
@@ -436,51 +427,6 @@
     max-width: 62ch;
   }
   .story-body strong { color: var(--ink); }
-
-  .mindset-band {
-    background:
-      radial-gradient(ellipse 800px 400px at 50% 0%, rgba(255,207,107,0.25), transparent 65%),
-      var(--accent-2);
-    color: #0d2b1e;
-    padding: clamp(3rem, 8vw, 4.5rem) 0;
-  }
-
-  .mindset-quote {
-    position: relative;
-    margin: 0 auto;
-    max-width: 62ch;
-    font-size: clamp(1.1rem, 2.6vw, 1.4rem);
-    line-height: 1.9;
-    color: #0d2b1e;
-  }
-  .mindset-quote strong { color: #17406e; font-weight: 800; }
-
-  .quote-mark {
-    position: absolute;
-    top: -3.2rem;
-    left: -1.5rem;
-    font-size: 7rem;
-    font-weight: 800;
-    color: #ffffff;
-    opacity: 0.5;
-    line-height: 1;
-    font-family: var(--display);
-  }
-  @media (max-width: 560px) {
-    .quote-mark { position: static; display: block; font-size: 4.5rem; margin-bottom: -1.5rem; }
-  }
-
-  .mindset-quote cite {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    margin-top: 1.8rem;
-    font-style: normal;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 0.88rem;
-    color: #0d2b1e;
-  }
 
   /* ---- FAQ ---- */
 
@@ -653,9 +599,9 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="eyebrow">🩺 물리치료사 출신 보험설계사</div>
+      <div class="eyebrow">물리치료사 출신 보험설계사</div>
       <h1>상품이 아니라,<br>사람을 보고 결정하세요</h1>
-      <p class="hero-tagline">물리치료사로 환자분들을 가까이서 돌보다가, 결국 보험도 상품이 아니라 사람이 전부라는 걸 알았습니다. 그 사람이 되고 싶어서 이 일을 시작했습니다.</p>
+      <p class="hero-tagline">물리치료사로 환자분들을 돌보다가 보험 일을 시작했습니다. 보험은 상품 보고 가입하는 게 아니라 사람 보고 가입한다는 걸 알았기 때문입니다.</p>
       <div class="rotator-line">
         이런 것들 알려드려요
         <span class="rotator" aria-live="off">
@@ -666,7 +612,7 @@
         </span>
       </div>
       <div class="hero-ctas">
-        <a class="btn btn-solid" href="tel:01025953182">📞 전화로 편하게 물어보기</a>
+        <a class="btn btn-solid" href="tel:01025953182">전화로 물어보기</a>
         <a class="btn btn-outline" href="https://open.kakao.com/o/sARlYOti" target="_blank" rel="noopener">카카오톡으로 물어보기</a>
       </div>
     </div>
@@ -702,24 +648,21 @@
     <h2>이렇게 진행돼요</h2>
     <div class="process-list">
       <div class="process-step reveal">
-        <span class="step-no">STEP 1</span>
-        <div class="icon-badge">💬</div>
+        <div class="icon-badge">1</div>
         <h3>편하게 <span class="hl">말씀</span>해주세요</h3>
         <p>전화나 카카오톡, 편하신 방법으로<br>상황을 먼저 들어볼게요.</p>
         <a class="step-cta" href="tel:01025953182">전화로 물어보기</a>
       </div>
       <div class="process-arrow" aria-hidden="true"></div>
       <div class="process-step reveal">
-        <span class="step-no">STEP 2</span>
-        <div class="icon-badge">🔍</div>
+        <div class="icon-badge">2</div>
         <h3>꼼꼼히 <span class="hl">살펴봐</span>드려요</h3>
         <p>고지의무, 보장범위처럼<br>놓치기 쉬운 부분까지 확인해드려요.</p>
         <a class="step-cta" href="#topics">알아두면 좋은 것들</a>
       </div>
       <div class="process-arrow" aria-hidden="true"></div>
       <div class="process-step reveal">
-        <span class="step-no">STEP 3</span>
-        <div class="icon-badge">✅</div>
+        <div class="icon-badge">3</div>
         <h3>편하게 <span class="hl">결정</span>하세요</h3>
         <p>설명 듣고, 원하실 때만<br>천천히 결정하시면 됩니다.</p>
         <a class="step-cta" href="#faq">궁금한 점 더 보기</a>
@@ -729,10 +672,10 @@
 
   <div class="trust-strip">
     <div class="trust-row">
-      <div class="trust-item reveal"><span class="t-icon">💰</span>상담은 무료예요</div>
-      <div class="trust-item reveal"><span class="t-icon">🙅</span>억지로 안 권해요</div>
-      <div class="trust-item reveal"><span class="t-icon">📞</span>전화든 카톡이든 다 좋아요</div>
-      <div class="trust-item reveal"><span class="t-icon">🛠️</span>가입 후에도 챙겨드려요</div>
+      <div class="trust-item reveal">상담은 무료예요</div>
+      <div class="trust-item reveal">억지로 안 권해요</div>
+      <div class="trust-item reveal">전화든 카톡이든 다 좋아요</div>
+      <div class="trust-item reveal">가입 후에도 챙겨드려요</div>
     </div>
   </div>
 
@@ -780,18 +723,6 @@
 
 </main>
 
-<div class="mindset-band">
-  <div class="wrap">
-    <blockquote class="mindset-quote reveal">
-      <span class="quote-mark" aria-hidden="true">"</span>
-      보험은 상품이 아니라 사람을 보고 가입합니다. 저는 그 많은 사람들 중, 고객님이 믿고 신뢰할 수 있는 사람이고 싶었습니다.
-      <br><br>
-      <strong>그 고민에 대한 답</strong>이, 지금 제가 이 일을 하는 이유입니다.
-      <cite>믿음설계</cite>
-    </blockquote>
-  </div>
-</div>
-
 <div class="wrap">
 
   <section id="faq">
@@ -828,7 +759,7 @@
     <h2>편하게 연락 주세요</h2>
     <p class="lede">전화든 카카오톡이든, 편하신 방법으로 말씀해주시면 바로 답변드릴게요.</p>
     <div class="contact-ctas">
-      <a class="btn btn-solid" href="tel:01025953182">📞 010-2595-3182</a>
+      <a class="btn btn-solid" href="tel:01025953182">010-2595-3182</a>
       <a class="btn btn-outline" href="https://open.kakao.com/o/sARlYOti" target="_blank" rel="noopener">카카오톡 오픈채팅</a>
     </div>
     <p class="disclaimer">
