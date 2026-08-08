@@ -132,6 +132,22 @@
     max-width: 760px;
     margin: 0 auto;
     padding: clamp(3.5rem, 10vw, 6rem) clamp(1.25rem, 4vw, 2.5rem);
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: clamp(1.5rem, 5vw, 3rem);
+    align-items: start;
+  }
+  @media (max-width: 640px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-portrait { order: -1; width: 140px; }
+  }
+
+  .hero-portrait img {
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+    filter: grayscale(1);
+    border: 1px solid rgba(247,245,239,0.2);
   }
 
   .eyebrow {
@@ -392,12 +408,17 @@
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">노홍균 · 물리치료사 출신 보험설계사</div>
-    <h1>상품이 아니라,<br>사람을 보고 결정하세요</h1>
-    <p class="hero-tagline">물리치료사로 환자분들을 돌보다가 보험 일을 시작했습니다. 보험은 상품이 아니라 사람을 보고 가입한다는 걸 그때 알았습니다.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-solid" href="#contact">상담 신청하기</a>
-      <a class="btn btn-outline" href="#story">이야기 보기</a>
+    <div>
+      <div class="eyebrow">노홍균 · 물리치료사 출신 보험설계사</div>
+      <h1>상품이 아니라,<br>사람을 보고 결정하세요</h1>
+      <p class="hero-tagline">물리치료사로 환자분들을 돌보다가 보험 일을 시작했습니다. 보험은 상품이 아니라 사람을 보고 가입한다는 걸 그때 알았습니다.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="#contact">상담 신청하기</a>
+        <a class="btn btn-outline" href="#story">이야기 보기</a>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <img src="images/profile.jpg" alt="노홍균 설계사 프로필 사진">
     </div>
   </div>
 </div>
