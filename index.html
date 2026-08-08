@@ -4,67 +4,60 @@
 <title>믿음설계 — 보험은 사람을 보고 결정합니다</title>
 <style>
   :root {
-    --bg: #f3f6fa;
-    --surface: #ffffff;
-    --ink: #16243a;
-    --ink-soft: #4c5c72;
-    --ink-faint: #8593a6;
-    --accent: #6fa8dc;
-    --accent-deep: #2f5f96;
-    --accent-2: #6fcf97;
-    --yellow: #ffcf6b;
-    --line: rgba(22, 36, 58, 0.12);
+    --bg: #eef1f6;
+    --surface: #e2e8f0;
+    --ink: #151b26;
+    --ink-soft: #4a5568;
+    --ink-faint: #7c8798;
+    --accent: #35618f;
+    --accent-bright: #4f7fb8;
+    --accent-soft: #dbe6f2;
+    --line: rgba(21, 27, 38, 0.14);
+    --hero-bg: #16233a;
+    --hero-ink: #eef1f6;
+    --hero-ink-soft: #aab8cc;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, ui-serif, serif;
     --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
-    --display: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #101722;
-      --surface: #182233;
-      --ink: #eef2f8;
-      --ink-soft: #b6c1d1;
-      --ink-faint: #74839a;
-      --accent: #6fa8dc;
-      --accent-deep: #9cc6ec;
-      --accent-2: #6fcf97;
-      --yellow: #ffd57e;
-      --line: rgba(238, 242, 248, 0.14);
+      --bg: #10151f;
+      --surface: #171e2b;
+      --ink: #eef1f6;
+      --ink-soft: #a4aebd;
+      --ink-faint: #666f80;
+      --accent: #7fa8d4;
+      --accent-bright: #9cc0e8;
+      --line: rgba(238, 241, 246, 0.14);
     }
   }
   :root[data-theme="dark"] {
-    --bg: #101722;
-    --surface: #182233;
-    --ink: #eef2f8;
-    --ink-soft: #b6c1d1;
-    --ink-faint: #74839a;
-    --accent: #6fa8dc;
-    --accent-deep: #9cc6ec;
-    --accent-2: #6fcf97;
-    --yellow: #ffd57e;
-    --line: rgba(238, 242, 248, 0.14);
+    --bg: #10151f;
+    --surface: #171e2b;
+    --ink: #eef1f6;
+    --ink-soft: #a4aebd;
+    --ink-faint: #666f80;
+    --accent: #7fa8d4;
+    --accent-bright: #9cc0e8;
+    --line: rgba(238, 241, 246, 0.14);
   }
   :root[data-theme="light"] {
-    --bg: #f3f6fa;
-    --surface: #ffffff;
-    --ink: #16243a;
-    --ink-soft: #4c5c72;
-    --ink-faint: #8593a6;
-    --accent: #6fa8dc;
-    --accent-deep: #2f5f96;
-    --accent-2: #6fcf97;
-    --yellow: #ffcf6b;
-    --line: rgba(22, 36, 58, 0.12);
+    --bg: #eef1f6;
+    --surface: #e2e8f0;
+    --ink: #151b26;
+    --ink-soft: #4a5568;
+    --ink-faint: #7c8798;
+    --accent: #35618f;
+    --accent-bright: #4f7fb8;
+    --line: rgba(21, 27, 38, 0.14);
   }
 
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-    .rotator span { animation: none !important; opacity: 0 !important; }
-    .rotator span:first-child { opacity: 1 !important; }
   }
 
   body {
@@ -73,13 +66,13 @@
     color: var(--ink);
     font-family: var(--sans);
     -webkit-font-smoothing: antialiased;
-    line-height: 1.7;
+    line-height: 1.65;
   }
 
   a { color: inherit; }
 
   .wrap {
-    max-width: 880px;
+    max-width: 760px;
     margin: 0 auto;
     padding: 0 clamp(1.25rem, 4vw, 2.5rem);
   }
@@ -91,19 +84,23 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.4rem clamp(1.25rem, 4vw, 2.5rem);
-    max-width: 880px;
+    max-width: 760px;
     margin: 0 auto;
-    gap: 1rem;
     flex-wrap: wrap;
+    gap: 0.75rem;
   }
 
-  .wordmark { font-family: var(--display); font-weight: 800; font-size: 1.2rem; }
-  .wordmark span { color: var(--accent-deep); }
+  .wordmark {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    letter-spacing: 0.01em;
+  }
+  .wordmark .dot { color: var(--accent); }
 
   .nav-links {
     display: flex;
-    gap: 1.6rem;
-    font-size: 0.9rem;
+    gap: 1.5rem;
+    font-size: 0.86rem;
     color: var(--ink-soft);
   }
   .nav-links a { text-decoration: none; }
@@ -111,162 +108,94 @@
   @media (max-width: 600px) { .nav-links { display: none; } }
 
   .nav-cta {
-    font-size: 0.86rem;
-    font-weight: 800;
-    background: var(--accent);
-    color: #0f1c2e;
-    padding: 0.6rem 1.2rem;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--ink);
+    padding: 0.5rem 1rem;
     text-decoration: none;
-    border-radius: 999px;
+    border-radius: 2px;
     white-space: nowrap;
   }
-  .nav-cta:hover, .nav-cta:focus-visible { opacity: 0.85; }
+  .nav-cta:hover, .nav-cta:focus-visible { background: var(--ink); color: var(--bg); }
 
   /* ---- Hero ---- */
 
   .hero {
-    background:
-      radial-gradient(ellipse 700px 420px at 20% 0%, rgba(255,207,107,0.35), transparent 60%),
-      radial-gradient(ellipse 600px 400px at 90% 100%, rgba(111,207,151,0.3), transparent 60%),
-      var(--accent);
-    color: #0f1c2e;
-    position: relative;
-    overflow: hidden;
+    background: var(--hero-bg);
+    color: var(--hero-ink);
   }
 
   .hero-inner {
-    max-width: 880px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: clamp(3rem, 8vw, 5rem) clamp(1.25rem, 4vw, 2.5rem) clamp(3rem, 7vw, 4rem);
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: clamp(1.5rem, 5vw, 3rem);
-    align-items: center;
-  }
-  @media (max-width: 720px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-art { order: -1; max-width: 260px; margin: 0 auto; }
-  }
-
-  .hero-art { width: 100%; height: auto; display: block; }
-
-  .badge-pulse {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: badge-pulse 2.2s ease-in-out infinite;
-  }
-  @keyframes badge-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.12); }
+    padding: clamp(3.5rem, 10vw, 6rem) clamp(1.25rem, 4vw, 2.5rem);
   }
 
   .eyebrow {
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: #17406e;
-    background: rgba(255,255,255,0.55);
-    display: inline-block;
-    padding: 0.35rem 0.9rem;
-    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--accent-bright);
     margin-bottom: 1.2rem;
   }
 
   .hero h1 {
-    font-family: var(--display);
+    font-family: var(--sans);
     font-weight: 800;
-    font-size: clamp(2.1rem, 5.2vw, 3rem);
-    line-height: 1.28;
-    margin: 0 0 1.2rem;
+    font-size: clamp(2.2rem, 6.5vw, 3.4rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.3rem;
     text-wrap: balance;
-    color: #0f1c2e;
   }
 
   .hero-tagline {
-    font-size: 1.05rem;
-    color: #294764;
-    max-width: 42ch;
-    margin: 0 0 1.4rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    color: var(--hero-ink-soft);
+    max-width: 40ch;
+    margin: 0 0 2.2rem;
+    text-wrap: balance;
   }
 
-  .rotator-line {
-    font-family: var(--sans);
-    font-weight: 700;
-    font-size: 0.9rem;
-    color: #294764;
-    margin: 0 0 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-  .rotator {
-    display: inline-grid;
-    font-weight: 800;
-    color: var(--accent-deep);
-  }
-  .rotator span {
-    grid-area: 1 / 1;
-    animation: rotator-fade 8s infinite both;
-    white-space: nowrap;
-  }
-  .rotator span:nth-child(1) { animation-delay: 0s; }
-  .rotator span:nth-child(2) { animation-delay: 2s; }
-  .rotator span:nth-child(3) { animation-delay: 4s; }
-  .rotator span:nth-child(4) { animation-delay: 6s; }
-  @keyframes rotator-fade {
-    0% { opacity: 0; transform: translateY(4px); }
-    4% { opacity: 1; transform: translateY(0); }
-    21% { opacity: 1; transform: translateY(0); }
-    25% { opacity: 0; transform: translateY(-4px); }
-    100% { opacity: 0; }
-  }
-
-  .hero-ctas { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
 
   .btn {
-    font-size: 0.94rem;
-    font-weight: 800;
-    padding: 0.9rem 1.5rem;
-    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    padding: 0.75rem 1.3rem;
+    border-radius: 2px;
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+    display: inline-block;
   }
-  .btn-solid { background: #0f1c2e; color: #f3f6fa; }
-  .btn-solid:hover, .btn-solid:focus-visible { opacity: 0.85; }
-  .btn-outline { border: 2px solid #0f1c2e; color: #0f1c2e; }
-  .btn-outline:hover, .btn-outline:focus-visible { background: rgba(15,28,46,0.08); }
+  .btn-solid { background: var(--accent-bright); color: #0d1420; }
+  .btn-solid:hover, .btn-solid:focus-visible { background: var(--hero-ink); }
+  .btn-outline { border: 1px solid var(--hero-ink-soft); color: var(--hero-ink); }
+  .btn-outline:hover, .btn-outline:focus-visible { border-color: var(--hero-ink); background: rgba(238,241,246,0.08); }
 
   /* ---- Sections ---- */
 
-  section { padding: clamp(2.5rem, 6vw, 3.5rem) 0 clamp(3rem, 6.5vw, 4rem); position: relative; }
-
-  section:nth-of-type(odd) {
-    background: var(--surface);
-    border-radius: 24px;
-    margin: 0 -1.25rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
+  section { padding: clamp(2.75rem, 6vw, 4rem) 0; border-top: 1px solid var(--line); }
 
   .kicker {
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--accent-deep);
+    color: var(--accent);
     display: block;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
   }
 
   h2 {
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: clamp(1.6rem, 3.4vw, 2rem);
-    margin: 0 0 0.6rem;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(1.5rem, 3.6vw, 1.85rem);
+    margin: 0 0 1rem;
     text-wrap: balance;
   }
 
@@ -277,156 +206,56 @@
     margin: 0 0 2rem;
   }
 
-  /* ---- Topics grid ---- */
+  /* ---- Topics ---- */
 
-  .coverage-grid {
+  .topic-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.1rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
   }
 
-  .coverage-card {
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 1.4rem 1.5rem;
+  .topic-card {
+    background: var(--surface);
+    padding: 1.6rem 1.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
   }
-  .coverage-card h3 { font-family: var(--display); margin: 0 0 0.5rem; font-size: 1.08rem; font-weight: 800; }
-  .coverage-card p { margin: 0; font-size: 0.88rem; color: var(--ink-soft); }
+  .topic-card .num { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); }
+  .topic-card h3 { font-family: var(--serif); font-weight: 500; font-size: 1.1rem; margin: 0; }
+  .topic-card p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
 
   /* ---- Process ---- */
 
-  #process {
-    background:
-      radial-gradient(560px 280px at 15% 0%, rgba(255,207,107,0.2), transparent 60%),
-      radial-gradient(560px 280px at 85% 100%, rgba(111,207,151,0.18), transparent 60%),
-      var(--bg);
-    border-radius: 24px;
-    margin: 0 -1.25rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
   .process-list {
-    display: flex;
-    align-items: stretch;
-    flex-wrap: wrap;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
   }
-
-  .process-step {
-    position: relative;
-    flex: 1 1 220px;
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: var(--surface);
-    border-radius: 22px;
-    padding: 2.2rem 1.4rem 1.6rem;
-    box-shadow: 0 10px 24px rgba(22,36,58,0.08);
-  }
-
-  .process-step .icon-badge {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: 1.4rem;
-    color: var(--accent-deep);
-    margin: 0 0 1.1rem;
-  }
-  .process-step:nth-child(1) .icon-badge { background: #dcebf9; }
-  .process-step:nth-child(3) .icon-badge { background: #dcf5e5; }
-  .process-step:nth-child(5) .icon-badge { background: #fff1cf; }
-
-  .process-step h3 { font-family: var(--display); margin: 0 0 0.5rem; font-size: 1.08rem; font-weight: 800; }
-  .process-step h3 .hl { color: var(--accent-deep); }
-  .process-step p { margin: 0 0 1.2rem; font-size: 0.88rem; color: var(--ink-soft); }
-
-  .step-cta {
-    margin-top: auto;
-    display: inline-block;
-    border: 2px solid var(--line);
-    border-radius: 999px;
-    padding: 0.6rem 1.2rem;
+  .process-step { padding-top: 1.3rem; border-top: 2px solid var(--accent); }
+  .process-step .num {
+    font-family: var(--mono);
     font-size: 0.85rem;
-    font-weight: 800;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .step-cta:hover, .step-cta:focus-visible { border-color: var(--accent); color: var(--accent-deep); }
-  .step-cta::after { content: " +"; }
-
-  .process-arrow {
-    flex: 0 0 auto;
-    width: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .process-arrow::before {
-    content: "›";
-    color: var(--accent-deep);
-    font-weight: 800;
-    font-size: 2.4rem;
-    line-height: 1;
+    color: var(--accent);
     display: block;
-    animation: arrow-x 1.6s ease-in-out infinite;
+    margin-bottom: 0.6rem;
   }
-  @keyframes arrow-x {
-    0%, 100% { transform: translateX(0); opacity: 0.5; }
-    50% { transform: translateX(6px); opacity: 1; }
-  }
+  .process-step h3 { font-family: var(--sans); font-weight: 700; font-size: 1rem; margin: 0 0 0.5rem; }
+  .process-step p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
 
-  @media (max-width: 720px) {
-    .process-list { flex-direction: column; align-items: stretch; }
-    .process-arrow { width: 100%; height: 1.8rem; }
-    .process-arrow::before { content: "⌄"; animation-name: arrow-y; }
-  }
-  @keyframes arrow-y {
-    0%, 100% { transform: translateY(0); opacity: 0.5; }
-    50% { transform: translateY(6px); opacity: 1; }
-  }
-
-  /* ---- Trust strip ---- */
-
-  .trust-strip { padding: 1.6rem 0 0.4rem; }
-  .trust-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.9rem 1rem;
-  }
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.1rem;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: var(--ink-soft);
-    white-space: nowrap;
-  }
   /* ---- Story ---- */
 
   .story-body {
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
+    gap: 1.15rem;
     font-size: 0.98rem;
     color: var(--ink-soft);
-    max-width: 62ch;
+    max-width: 60ch;
   }
-  .story-body strong { color: var(--ink); }
+  .story-body strong { color: var(--ink); font-weight: 600; }
 
   /* ---- FAQ ---- */
 
@@ -436,61 +265,83 @@
   .faq-item summary {
     list-style: none;
     cursor: pointer;
-    padding: 1.15rem 0;
+    padding: 1.1rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    font-family: var(--display);
     font-size: 0.98rem;
-    font-weight: 700;
+    font-weight: 600;
   }
   .faq-item summary::-webkit-details-marker { display: none; }
   .faq-item summary .q-mark {
+    font-family: var(--mono);
     font-weight: 400;
-    color: var(--accent-deep);
+    color: var(--accent);
     transition: transform 0.2s ease;
     flex-shrink: 0;
   }
   .faq-item[open] summary .q-mark { transform: rotate(45deg); }
-  .faq-item .a { margin: 0 0 1.2rem; font-size: 0.9rem; color: var(--ink-soft); max-width: 56ch; }
+  .faq-item .a { margin: 0 0 1.2rem; font-size: 0.92rem; color: var(--ink-soft); max-width: 56ch; }
 
   /* ---- Contact ---- */
 
   .contact-band {
-    background:
-      radial-gradient(ellipse 700px 380px at 80% 100%, rgba(255,207,107,0.3), transparent 60%),
-      var(--accent);
-    color: #0f1c2e;
+    background: var(--hero-bg);
+    color: var(--hero-ink);
   }
-  .contact-inner {
-    max-width: 880px;
-    margin: 0 auto;
-    padding: clamp(2.5rem, 6vw, 3.5rem) clamp(1.25rem, 4vw, 2.5rem);
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2.5rem;
   }
-  .contact-inner h2 { font-family: var(--display); color: #0f1c2e; }
-  .contact-inner .lede { color: #294764; }
-  .contact-ctas { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 0.5rem; }
-  .contact-band .btn-solid { background: #0f1c2e; color: #f3f6fa; }
-  .contact-band .btn-outline { border-color: #0f1c2e; color: #0f1c2e; }
+  @media (max-width: 640px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+
+  .contact-grid h2 { color: var(--hero-ink); }
+  .contact-grid .lede { color: var(--hero-ink-soft); }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    font-size: 0.98rem;
+  }
+  .contact-info .row {
+    display: flex;
+    gap: 0.9rem;
+    border-bottom: 1px solid rgba(238,241,246,0.14);
+    padding-bottom: 1.1rem;
+  }
+  .contact-info .row .k {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--hero-ink-soft);
+    width: 5rem;
+    flex-shrink: 0;
+    padding-top: 0.15rem;
+  }
+  .contact-info a { text-decoration: none; }
+  .contact-info a:hover, .contact-info a:focus-visible { color: var(--accent-bright); }
 
   .disclaimer {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(15,28,46,0.15);
+    margin-top: 2rem;
     font-size: 0.78rem;
-    color: #37567a;
-    max-width: 64ch;
+    color: var(--hero-ink-soft);
+    max-width: 60ch;
   }
 
   /* ---- Footer ---- */
 
   footer {
     padding: 1.75rem clamp(1.25rem, 4vw, 2.5rem);
-    max-width: 880px;
+    max-width: 760px;
     margin: 0 auto;
-    font-family: var(--display);
-    font-weight: 700;
+    font-family: var(--mono);
     font-size: 0.75rem;
     color: var(--ink-faint);
     display: flex;
@@ -499,95 +350,11 @@
     gap: 0.5rem;
   }
 
-  :focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
-
-  /* ---- Quick menu ---- */
-
-  .quick-menu {
-    position: fixed;
-    right: clamp(0.75rem, 3vw, 1.5rem);
-    bottom: clamp(0.75rem, 3vw, 1.5rem);
-    z-index: 40;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .quick-btn {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    color: var(--ink);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 1.35rem;
-    box-shadow: 0 4px 14px rgba(22,36,58,0.18);
-  }
-  .quick-btn:hover, .quick-btn:focus-visible { transform: translateY(-2px); }
-  .quick-btn.call { background: var(--accent); color: #0f1c2e; }
-  .quick-btn.kakao { background: #fee500; color: #3a1c0f; }
-  .quick-btn.top { font-size: 1rem; color: var(--ink-faint); }
-
-  @media (max-width: 560px) {
-    .quick-menu {
-      flex-direction: row;
-      left: 0.75rem;
-      right: 0.75rem;
-      bottom: 0.75rem;
-      justify-content: center;
-    }
-  }
-
-  .quick-btn { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-
-  .quick-btn.kakao { animation: kakao-pulse 2.6s ease-in-out infinite; }
-  @keyframes kakao-pulse {
-    0%, 100% { box-shadow: 0 4px 14px rgba(22,36,58,0.18), 0 0 0 0 rgba(254,229,0,0.5); }
-    50% { box-shadow: 0 4px 14px rgba(22,36,58,0.18), 0 0 0 8px rgba(254,229,0,0); }
-  }
-
-  /* ---- Hero entrance ---- */
-
-  .hero-text > * { animation: fade-up 0.7s ease both; }
-  .hero-text .eyebrow { animation-delay: 0s; }
-  .hero-text h1 { animation-delay: 0.08s; }
-  .hero-text .hero-tagline { animation-delay: 0.16s; }
-  .hero-text .rotator-line { animation-delay: 0.22s; }
-  .hero-text .hero-ctas { animation-delay: 0.3s; }
-  .hero-art { animation: fade-up 0.8s ease 0.3s both; }
-  @keyframes fade-up {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ---- Scroll reveal ---- */
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  .coverage-card, .process-step, .faq-item {
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-  .coverage-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(22,36,58,0.1);
-    border-color: var(--accent);
-  }
-  .process-step:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(22,36,58,0.14); }
-  .process-step:hover .icon-badge { transform: scale(1.08); }
-  .process-step .icon-badge { transition: transform 0.2s ease; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 </style>
 
-<nav id="top">
-  <span class="wordmark">믿음<span>설계</span></span>
+<nav>
+  <span class="wordmark">믿음<span class="dot">·</span>설계</span>
   <div class="nav-links">
     <a href="#story">이야기</a>
     <a href="#topics">알아두면 좋은 것들</a>
@@ -598,115 +365,74 @@
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-text">
-      <div class="eyebrow">물리치료사 출신 보험설계사</div>
-      <h1>상품이 아니라,<br>사람을 보고 결정하세요</h1>
-      <p class="hero-tagline">물리치료사로 환자분들을 돌보다가 보험 일을 시작했습니다. 보험은 상품 보고 가입하는 게 아니라 사람 보고 가입한다는 걸 알았기 때문입니다.</p>
-      <div class="rotator-line">
-        이런 것들 알려드려요
-        <span class="rotator" aria-live="off">
-          <span>숨은보험금</span>
-          <span>환급금</span>
-          <span>고지의무</span>
-          <span>보장범위</span>
-        </span>
-      </div>
-      <div class="hero-ctas">
-        <a class="btn btn-solid" href="tel:01025953182">전화로 물어보기</a>
-        <a class="btn btn-outline" href="https://open.kakao.com/o/sARlYOti" target="_blank" rel="noopener">카카오톡으로 물어보기</a>
-      </div>
+    <div class="eyebrow">물리치료사 출신 보험설계사</div>
+    <h1>상품이 아니라,<br>사람을 보고 결정하세요</h1>
+    <p class="hero-tagline">물리치료사로 환자분들을 돌보다가 보험 일을 시작했습니다. 보험은 상품이 아니라 사람을 보고 가입한다는 걸 그때 알았습니다.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-solid" href="#contact">상담 신청하기</a>
+      <a class="btn btn-outline" href="#story">이야기 보기</a>
     </div>
-    <svg class="hero-art" viewBox="0 0 320 260" aria-hidden="true">
-      <circle cx="160" cy="120" r="98" fill="#ffffff" opacity="0.25"/>
-      <rect x="38" y="140" width="70" height="90" rx="16" fill="#ffffff" opacity="0.9"/>
-      <rect x="38" y="140" width="70" height="10" rx="5" fill="var(--accent-2)"/>
-      <line x1="48" y1="168" x2="98" y2="168" stroke="#a9bcd0" stroke-width="4" stroke-linecap="round"/>
-      <line x1="48" y1="182" x2="88" y2="182" stroke="#a9bcd0" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
-      <line x1="48" y1="196" x2="93" y2="196" stroke="#a9bcd0" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
-
-      <rect x="212" y="150" width="70" height="80" rx="16" fill="#ffffff" opacity="0.9"/>
-      <rect x="212" y="150" width="70" height="10" rx="5" fill="var(--yellow)"/>
-      <line x1="222" y1="178" x2="272" y2="178" stroke="#a9bcd0" stroke-width="4" stroke-linecap="round"/>
-      <line x1="222" y1="192" x2="262" y2="192" stroke="#a9bcd0" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
-
-      <rect x="125" y="108" width="70" height="122" rx="18" fill="#ffffff"/>
-      <rect x="125" y="108" width="70" height="10" rx="5" fill="#0f1c2e"/>
-      <line x1="135" y1="136" x2="185" y2="136" stroke="#a9bcd0" stroke-width="4" stroke-linecap="round"/>
-      <line x1="135" y1="150" x2="175" y2="150" stroke="#a9bcd0" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
-      <line x1="135" y1="164" x2="180" y2="164" stroke="#a9bcd0" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
-
-      <circle class="badge-pulse" cx="195" cy="108" r="17" fill="#0f1c2e"/>
-      <path d="M187,108 L193,114 L204,100" fill="none" stroke="#f3f6fa" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
   </div>
 </div>
 
 <main class="wrap">
 
-  <section id="process">
-    <span class="kicker">Process</span>
-    <h2>이렇게 진행돼요</h2>
-    <div class="process-list">
-      <div class="process-step reveal">
-        <div class="icon-badge">1</div>
-        <h3>편하게 <span class="hl">말씀</span>해주세요</h3>
-        <p>전화나 카카오톡, 편하신 방법으로<br>상황을 먼저 들어볼게요.</p>
-        <a class="step-cta" href="tel:01025953182">전화로 물어보기</a>
-      </div>
-      <div class="process-arrow" aria-hidden="true"></div>
-      <div class="process-step reveal">
-        <div class="icon-badge">2</div>
-        <h3>꼼꼼히 <span class="hl">살펴봐</span>드려요</h3>
-        <p>고지의무, 보장범위처럼<br>놓치기 쉬운 부분까지 확인해드려요.</p>
-        <a class="step-cta" href="#topics">알아두면 좋은 것들</a>
-      </div>
-      <div class="process-arrow" aria-hidden="true"></div>
-      <div class="process-step reveal">
-        <div class="icon-badge">3</div>
-        <h3>편하게 <span class="hl">결정</span>하세요</h3>
-        <p>설명 듣고, 원하실 때만<br>천천히 결정하시면 됩니다.</p>
-        <a class="step-cta" href="#faq">궁금한 점 더 보기</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="trust-strip">
-    <div class="trust-row">
-      <div class="trust-item reveal">상담은 무료예요</div>
-      <div class="trust-item reveal">억지로 안 권해요</div>
-      <div class="trust-item reveal">전화든 카톡이든 다 좋아요</div>
-      <div class="trust-item reveal">가입 후에도 챙겨드려요</div>
-    </div>
-  </div>
-
   <section id="topics">
     <span class="kicker">Guide</span>
     <h2>이런 게 궁금하셨죠</h2>
     <p class="lede">보험, 막상 궁금해도 어디에 물어보기 애매하셨죠. 자주 궁금해하시는 부분들을 정리했습니다.</p>
-    <div class="coverage-grid">
-      <div class="coverage-card reveal">
+    <div class="topic-grid">
+      <div class="topic-card">
+        <span class="num">01</span>
         <h3>숨은보험금</h3>
         <p>본인도 모르게 청구하지 않은 보험금이 남아있는 경우가 많습니다. 가입 이력을 함께 점검해드립니다.</p>
       </div>
-      <div class="coverage-card reveal">
+      <div class="topic-card">
+        <span class="num">02</span>
         <h3>환급금</h3>
         <p>만기, 해지, 중도인출 등 상황에 따라 돌려받는 금액이 달라집니다. 내가 낸 돈이 어떻게 돌아오는지 안내해드립니다.</p>
       </div>
-      <div class="coverage-card reveal">
+      <div class="topic-card">
+        <span class="num">03</span>
         <h3>보험의 중요성</h3>
         <p>예상하지 못한 사고나 질병은 준비 없이 찾아옵니다. 큰 지출을 감당해야 하는 순간, 보험은 대비입니다.</p>
       </div>
-      <div class="coverage-card reveal">
+      <div class="topic-card">
+        <span class="num">04</span>
         <h3>고지의무</h3>
-        <p>가입 시 건강 상태와 이력을 빠짐없이 알리는 게 중요합니다. 지키지 않으면 정작 필요할 때 보장을 못 받을 수 있어요.</p>
+        <p>가입 시 건강 상태와 이력을 빠짐없이 알리는 게 중요합니다. 지키지 않으면 정작 필요할 때 보장을 못 받을 수 있습니다.</p>
       </div>
-      <div class="coverage-card reveal">
+      <div class="topic-card">
+        <span class="num">05</span>
         <h3>보장의 범위 및 중요성</h3>
         <p>같은 보험이라도 보장 범위에 따라 실제 받는 금액이 크게 달라집니다. 어디까지 보장되는지 꼼꼼히 확인해야 합니다.</p>
       </div>
-      <div class="coverage-card reveal">
+      <div class="topic-card">
+        <span class="num">06</span>
         <h3>싫은데 왜 돈을 쓸까요</h3>
         <p>필요성은 알지만 막연히 가입해서, 정작 필요할 때 제대로 못 쓰는 경우가 많습니다. 제대로 설계하지 않으면 매달 나가는 돈이 새는 돈이 됩니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <span class="kicker">Process</span>
+    <h2>이렇게 진행돼요</h2>
+    <div class="process-list">
+      <div class="process-step">
+        <span class="num">01</span>
+        <h3>상담</h3>
+        <p>전화나 카카오톡, 편하신 방법으로 상황을 먼저 들어볼게요.</p>
+      </div>
+      <div class="process-step">
+        <span class="num">02</span>
+        <h3>확인</h3>
+        <p>고지의무, 보장범위처럼 놓치기 쉬운 부분까지 꼼꼼히 확인해드려요.</p>
+      </div>
+      <div class="process-step">
+        <span class="num">03</span>
+        <h3>결정</h3>
+        <p>설명 듣고, 원하실 때만 천천히 결정하시면 됩니다.</p>
       </div>
     </div>
   </section>
@@ -714,57 +440,55 @@
   <section id="story">
     <span class="kicker">Story</span>
     <h2>왜 보험설계사가 되었을까요</h2>
-    <div class="story-body reveal">
+    <div class="story-body">
       <p>보험은 사고파는 상품이다 보니, 많은 분들이 대충 보고 넘어갑니다. 하지만 정작 중요한 순간에 힘이 되는 건 상품 그 자체가 아니라, <strong>그 상품을 제대로 설계하고 끝까지 책임져 줄 사람</strong>입니다.</p>
       <p>물리치료사로 환자분들을 만나며 회복의 과정을 가장 가까이서 지켜봤습니다. 그 경험을 통해 막연하게만 생각했던 보험을 어떻게 이해하고, 어떻게 활용해야 하는지 진지하게 고민하게 됐습니다.</p>
       <p>보험은 결국 상품이 아니라 사람을 보고 가입합니다. 수많은 설계사들 중에서, 고객님이 믿고 신뢰할 수 있는 사람이 되고 싶었습니다. 그 고민에 대한 답이 지금 이 일을 하는 이유입니다.</p>
     </div>
   </section>
 
-</main>
-
-<div class="wrap">
-
   <section id="faq">
     <span class="kicker">FAQ</span>
     <h2>많이 물어보시는 것들</h2>
 
-    <details class="faq-item reveal">
+    <details class="faq-item">
       <summary>상담료가 있나요?<span class="q-mark">+</span></summary>
       <p class="a">아니요, 상담은 무료예요. 설명 들어보신 후에 가입 여부는 편하게 결정하시면 됩니다.</p>
     </details>
-    <details class="faq-item reveal">
+    <details class="faq-item">
       <summary>상담받으면 꼭 가입해야 하나요?<span class="q-mark">+</span></summary>
       <p class="a">아니에요. 설명만 들으셔도 괜찮고, 가입은 원하실 때만 결정하시면 됩니다.</p>
     </details>
-    <details class="faq-item reveal">
+    <details class="faq-item">
       <summary>가입은 어떻게 진행되나요?<span class="q-mark">+</span></summary>
       <p class="a">가입을 원하시면 관련 법령과 절차에 따라 정식 가입 안내를 별도로 도와드려요.</p>
     </details>
-    <details class="faq-item reveal">
+    <details class="faq-item">
       <summary>꼭 만나서 얘기해야 하나요?<span class="q-mark">+</span></summary>
       <p class="a">아니요, 꼭 안 만나셔도 돼요. 전화나 카카오톡, 편하신 방법으로 말씀해주시면 됩니다.</p>
     </details>
-    <details class="faq-item reveal">
+    <details class="faq-item">
       <summary>상담 시 필요한 준비물이 있나요?<span class="q-mark">+</span></summary>
       <p class="a">특별히 준비하실 건 없어요. 다만 기존에 가입하신 보험이 있으면, 증권이나 가입 내역을 챙겨주시면 더 정확하게 봐드릴 수 있어요.</p>
     </details>
   </section>
 
-</div>
+</main>
 
 <div class="contact-band" id="contact">
-  <div class="contact-inner">
-    <span class="kicker">Contact</span>
-    <h2>편하게 연락 주세요</h2>
-    <p class="lede">전화든 카카오톡이든, 편하신 방법으로 말씀해주시면 바로 답변드릴게요.</p>
-    <div class="contact-ctas">
-      <a class="btn btn-solid" href="tel:01025953182">010-2595-3182</a>
-      <a class="btn btn-outline" href="https://open.kakao.com/o/sARlYOti" target="_blank" rel="noopener">카카오톡 오픈채팅</a>
+  <div class="wrap" style="padding: clamp(3rem, 7vw, 4.5rem) clamp(1.25rem, 4vw, 2.5rem);">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker">Contact</span>
+        <h2>편하게 연락 주세요</h2>
+        <p class="lede">전화든 카카오톡이든, 편하신 방법으로 말씀해주시면 바로 답변드릴게요.</p>
+      </div>
+      <div class="contact-info">
+        <div class="row"><span class="k">전화</span><a href="tel:01025953182">010-2595-3182</a></div>
+        <div class="row"><span class="k">카카오톡</span><a href="https://open.kakao.com/o/sARlYOti" target="_blank" rel="noopener">오픈채팅 바로가기</a></div>
+      </div>
     </div>
-    <p class="disclaimer">
-      본 페이지는 보험 상담 안내를 위한 소개 페이지이며, 실제 보험 가입 및 계약 체결은 관련 법령과 절차에 따라 별도로 진행됩니다.
-    </p>
+    <p class="disclaimer">본 페이지는 보험 상담 안내를 위한 소개 페이지이며, 실제 보험 가입 및 계약 체결은 관련 법령과 절차에 따라 별도로 진행됩니다.</p>
   </div>
 </div>
 
@@ -772,40 +496,3 @@
   <span>믿음설계</span>
   <span>© 2026</span>
 </footer>
-
-<div class="quick-menu">
-  <a class="quick-btn call" href="tel:01025953182" aria-label="전화 상담">📞</a>
-  <a class="quick-btn kakao" href="https://open.kakao.com/o/sARlYOti" target="_blank" rel="noopener" aria-label="카카오톡 문의">💬</a>
-  <a class="quick-btn top" href="#top" aria-label="맨 위로">↑</a>
-</div>
-
-<script>
-  if ("IntersectionObserver" in window) {
-    var groups = document.querySelectorAll(".coverage-grid, .process-list, .trust-row");
-    groups.forEach(function (group) {
-      Array.prototype.forEach.call(group.children, function (el, i) {
-        el.style.transitionDelay = (i * 0.08) + "s";
-      });
-    });
-
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    document.querySelectorAll(".reveal").forEach(function (el) {
-      observer.observe(el);
-    });
-  } else {
-    document.querySelectorAll(".reveal").forEach(function (el) {
-      el.classList.add("visible");
-    });
-  }
-</script>
