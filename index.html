@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>믿음설계 — 보험은 사람을 보고 결정합니다</title>
+<title>믿음설계 — 노홍균 보험설계사</title>
 <style>
   :root {
     --bg: #eef1f6;
@@ -247,6 +247,32 @@
 
   /* ---- Story ---- */
 
+  .story-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2.25rem;
+    align-items: start;
+  }
+  @media (max-width: 640px) {
+    .story-layout { grid-template-columns: 1fr; }
+    .story-portrait { max-width: 220px; }
+  }
+
+  .story-portrait img {
+    width: 100%;
+    display: block;
+    border-radius: 3px;
+    filter: grayscale(1);
+    border: 1px solid var(--line);
+  }
+  .story-portrait .cap {
+    margin-top: 0.7rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+  }
+  .story-portrait .cap strong { display: block; font-family: var(--sans); font-size: 0.92rem; color: var(--ink); margin-bottom: 0.15rem; }
+
   .story-body {
     display: flex;
     flex-direction: column;
@@ -365,7 +391,7 @@
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">물리치료사 출신 보험설계사</div>
+    <div class="eyebrow">노홍균 · 물리치료사 출신 보험설계사</div>
     <h1>상품이 아니라,<br>사람을 보고 결정하세요</h1>
     <p class="hero-tagline">물리치료사로 환자분들을 돌보다가 보험 일을 시작했습니다. 보험은 상품이 아니라 사람을 보고 가입한다는 걸 그때 알았습니다.</p>
     <div class="hero-ctas">
@@ -440,10 +466,16 @@
   <section id="story">
     <span class="kicker">Story</span>
     <h2>왜 보험설계사가 되었을까요</h2>
-    <div class="story-body">
-      <p>보험은 사고파는 상품이다 보니, 많은 분들이 대충 보고 넘어갑니다. 하지만 정작 중요한 순간에 힘이 되는 건 상품 그 자체가 아니라, <strong>그 상품을 제대로 설계하고 끝까지 책임져 줄 사람</strong>입니다.</p>
-      <p>물리치료사로 환자분들을 만나며 회복의 과정을 가장 가까이서 지켜봤습니다. 그 경험을 통해 막연하게만 생각했던 보험을 어떻게 이해하고, 어떻게 활용해야 하는지 진지하게 고민하게 됐습니다.</p>
-      <p>보험은 결국 상품이 아니라 사람을 보고 가입합니다. 수많은 설계사들 중에서, 고객님이 믿고 신뢰할 수 있는 사람이 되고 싶었습니다. 그 고민에 대한 답이 지금 이 일을 하는 이유입니다.</p>
+    <div class="story-layout">
+      <div class="story-portrait">
+        <img src="images/profile.jpg" alt="노홍균 설계사 프로필 사진">
+        <div class="cap"><strong>노홍균</strong>믿음설계 · 보험설계사</div>
+      </div>
+      <div class="story-body">
+        <p>보험은 사고파는 상품이다 보니, 많은 분들이 대충 보고 넘어갑니다. 하지만 정작 중요한 순간에 힘이 되는 건 상품 그 자체가 아니라, <strong>그 상품을 제대로 설계하고 끝까지 책임져 줄 사람</strong>입니다.</p>
+        <p>물리치료사로 환자분들을 만나며 회복의 과정을 가장 가까이서 지켜봤습니다. 그 경험을 통해 막연하게만 생각했던 보험을 어떻게 이해하고, 어떻게 활용해야 하는지 진지하게 고민하게 됐습니다.</p>
+        <p>보험은 결국 상품이 아니라 사람을 보고 가입합니다. 수많은 설계사들 중에서, 고객님이 믿고 신뢰할 수 있는 사람이 되고 싶었습니다. 그 고민에 대한 답이 지금 이 일을 하는 이유입니다.</p>
+      </div>
     </div>
   </section>
 
@@ -493,6 +525,6 @@
 </div>
 
 <footer>
-  <span>믿음설계</span>
+  <span>믿음설계 · 노홍균</span>
   <span>© 2026</span>
 </footer>
